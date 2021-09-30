@@ -79,19 +79,7 @@
     </div>
   </nav>
 
-  <div
-    id="sidebar-menu"
-    class="flex-shrink-0 p-3 bg bg-primary"
-    style="
-      overflow-y: scroll;
-      width: 249px;
-      border-right: 1px solid #dddddd;
-      position: fixed;
-      top: 56px;
-      bottom: 0px;
-      background: #EEEEEE !important;
-    "
-  >
+  <div id="sidebar-menu" class="flex-shrink-0 p-3 bg-white">
     <a
       href="/"
       class="
@@ -122,79 +110,96 @@
         <div class="collapse show" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li>
-              <router-link class="nav-link" aria-current="page" to="/"
+              <router-link class="nav-link link-dark rounded" to="/home"
                 >Home</router-link
               >
             </li>
-
-            <li class="nav-item">
-              <router-link class="nav-link" to="/view1">View 1</router-link>
+            <li>
+              <router-link class="nav-link link-dark rounded" to="/view1"
+                >View 1</router-link
+              >
             </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/view2">View 2</router-link>
+            <li>
+              <router-link class="nav-link link-dark rounded" to="/view2"
+                >View 2</router-link
+              >
             </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/about">About</router-link>
+            <li>
+              <router-link class="nav-link link-dark rounded" to="/about"
+                >About</router-link
+              >
             </li>
-
-            <li><a href="#" class="link-dark rounded">Overview</a></li>
-            <li><a href="#" class="link-dark rounded">Updates</a></li>
-            <li><a href="#" class="link-dark rounded">Reports</a></li>
           </ul>
         </div>
       </li>
+
       <li class="mb-1">
         <button
           class="btn btn-toggle align-items-center rounded collapsed"
           data-bs-toggle="collapse"
-          data-bs-target="#dashboard-collapse"
+          data-bs-target="#homealt-collapse"
           aria-expanded="false"
         >
-          Dashboard
+          Main Alt
         </button>
-        <div class="collapse" id="dashboard-collapse">
+        <div class="collapse show" id="homealt-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Overview</a></li>
-            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-            <li><a href="#" class="link-dark rounded">Annually</a></li>
+            <li>
+              <router-link class="nav-link link-dark rounded" to="/home"
+                >Home</router-link
+              >
+            </li>
+            <li>
+              <router-link class="nav-link link-dark rounded" to="/view1"
+                >View 1</router-link
+              >
+            </li>
+            <li>
+              <router-link class="nav-link link-dark rounded" to="/view2"
+                >View 2</router-link
+              >
+            </li>
+            <li>
+              <router-link class="nav-link link-dark rounded" to="/about"
+                >About</router-link
+              >
+            </li>
           </ul>
         </div>
       </li>
-      <li class="mb-1">
-        <button
-          class="btn btn-toggle align-items-center rounded collapsed"
-          data-bs-toggle="collapse"
-          data-bs-target="#orders-collapse"
-          aria-expanded="false"
-        >
-          Orders
-        </button>
-        <div class="collapse" id="orders-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">New</a></li>
-            <li><a href="#" class="link-dark rounded">Processed</a></li>
-            <li><a href="#" class="link-dark rounded">Shipped</a></li>
-            <li><a href="#" class="link-dark rounded">Returned</a></li>
-          </ul>
-        </div>
-      </li>
+      
       <li class="border-top my-3"></li>
       <li class="mb-1">
         <button
-          class="btn btn-toggle align-items-center rounded collapsed"
+          class="btn btn-toggle align-items-center rounded"
           data-bs-toggle="collapse"
-          data-bs-target="#account-collapse"
-          aria-expanded="false"
+          data-bs-target="#config-collapse"
+          aria-expanded="true"
         >
-          Account
+          Configuration
         </button>
-        <div class="collapse" id="account-collapse">
+<div class="collapse show" id="config-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">New...</a></li>
-            <li><a href="#" class="link-dark rounded">Profile</a></li>
-            <li><a href="#" class="link-dark rounded">Settings</a></li>
-            <li><a href="#" class="link-dark rounded">Sign out</a></li>
+            <li>
+              <router-link class="nav-link link-dark rounded" to="/home"
+                >Home</router-link
+              >
+            </li>
+            <li>
+              <router-link class="nav-link link-dark rounded" to="/view1"
+                >View 1</router-link
+              >
+            </li>
+            <li>
+              <router-link class="nav-link link-dark rounded" to="/view2"
+                >View 2</router-link
+              >
+            </li>
+            <li>
+              <router-link class="nav-link link-dark rounded" to="/about"
+                >About</router-link
+              >
+            </li>
           </ul>
         </div>
       </li>
@@ -243,9 +248,93 @@ html {
 */
 .router-view {
   border-top: 56px solid #eeeeee !important;
-  border-left: 250px solid #eeeeee !important;
-  height: 100%;
+  border-left: 250px solid red !important;
   display: block;
+}
+
+/*
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+*/
+
+#sidebar-menu {
+  position: fixed;
+  top: 56px;
+  bottom: 0px;
+  width: 250px !important;
+  border-right: 1px solid #dddddd;
+  text-align: left;
+  overflow-y: scroll;
+}
+#sidebar-menu ul,
+#sidebar-menu ul li,
+#sidebar-menu ul li a {
+  width: 100%;
+}
+
+#sidebar-menu ul li button,
+#sidebar-menu ul li a {
+  text-align: left;
+}
+
+.btn-toggle {
+  display: inline-flex;
+  width: 100%;
+}
+
+.btn-toggle:hover,
+.btn-toggle:focus {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #d2f4ea;
+}
+
+.btn-toggle::before {
+  top: 10px;
+  display: inline-flex;
+  line-height: 0;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  transition: transform 0.35s ease;
+  transform-origin: 0.5em 50%;
+}
+
+.btn-toggle[aria-expanded="true"] {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.btn-toggle[aria-expanded="true"]::before {
+  opacity: 0.6;
+  transform: rotate(90deg);
+}
+
+.btn-toggle-nav a {
+  display: inline-flex;
+  /*padding: 0.1875rem 2rem;*/
+  padding-left: 2rem;
+  margin-top: 0.125rem;
+  /*margin-left: 1.25rem;*/
+  text-decoration: none;
+}
+
+.btn-toggle-nav a:hover,
+.btn-toggle-nav a:focus {
+  background-color: #d2f4ea;
+}
+
+.scrollarea {
+  overflow-y: auto;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+.lh-tight {
+  line-height: 1.25;
 }
 </style>
 
